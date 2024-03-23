@@ -4,7 +4,8 @@ import { AppError } from './utilites/AppError.js';
 import { DBconnection } from './DataBase/connection.js';
 import { bootstrap } from './src/modules/index.router.js';
 import cors from 'cors'
-import { GlobalErrorHandling } from './src/middleware/globalErrorHandlling.js';
+import { GlobalErrorHandling } from './src/middleware/ErrorHandlling.js';
+
 dotenv.config()
 const app = express()
 const port = 3000
@@ -21,7 +22,7 @@ app.use('*', (req, res, next) => {
     next(new AppError(`not found ${req.originalUrl}`, 404))
 })
 app.use(GlobalErrorHandling)
-process.on('unhandledRejection', (err) => {   // out Express
+process.on('unhandledRejection', (err) => {
     console.log('error', err);
 })
 app.listen(process.env.PORT || port, () => console.log(`Example app listening on port ${port}!`))
