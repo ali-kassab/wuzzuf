@@ -1,0 +1,949 @@
+{
+	"info": {
+		"_postman_id": "f424904d-f5b4-4e80-95d7-b2db2312caea",
+		"name": "job_search_app",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26611902"
+	},
+	"item": [
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "signup",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\": \"ali\",\r\n    \"lastName\": \"kassab\",\r\n    \"email\": \"alikassab1@gmail.com\",\r\n    \"password\":\"123asd123\",\r\n    \"rePassword\":\"123asd123\",\r\n    \"recoverEmail\":\"ahmedali@gmail.com\",\r\n    \"role\":\"company_HR\",\r\n    \"mobileNumber\":\"01010044102\",\r\n    \"DOB\":\"1/1/1990\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/auth/signup",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"alikassab1gmail.com\",\r\n    \"password\": \"asd123123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "change password",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWMzYzg1OTRiMGM1MDVkOTMxYTQxZjAiLCJyb2xlIjoidXNlciIsImlhdCI6MTcwNzMzMjM4OH0.voJf097KjsS7TRWKIELpyqbboo0DDcGR41_zS9-tsog",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"password\":\"123asd123\",\r\n    \"newPassword\":\"asd123asd\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/auth/changePassword",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"changePassword"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "forget password",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWM0YzQ2YjA3ZjRlY2Q1ZjE4MjcxOTciLCJyb2xlIjoidXNlciIsImlhdCI6MTcwNzM5NDE1NX0.ylP_xRkGhFQAmvCW_Y4XwR5WVFE4KunllGSkHT1EOZI",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"alikassab1gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/auth/forgetPassword",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"forgetPassword"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "reset password",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWM0YzQ2YjA3ZjRlY2Q1ZjE4MjcxOTciLCJyb2xlIjoidXNlciIsImlhdCI6MTcwNzM5NDE1NX0.ylP_xRkGhFQAmvCW_Y4XwR5WVFE4KunllGSkHT1EOZI",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"OTP\": 909783,\r\n    \"newPassword\": \"asd123123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/auth/resetPassword",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"resetPassword"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "update user",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWM0ZWJjNGQ1YTExNTE1MTlkNTE3MTQiLCJyb2xlIjoidXNlciIsImlhdCI6MTcwNzQwNDIyOH0.7HwPKj6ocVhJHXQ_cquU7o3_VAwnXMlRRXV2VcdGccI",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"alikassab@gmail.com\"\r\n    // \"mobileNumber\":\"01010044105\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/user",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete user",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWMzYzg1OTRiMGM1MDVkOTMxYTQxZjAiLCJyb2xlIjoidXNlciIsImlhdCI6MTcwNzMzMjM4OH0.voJf097KjsS7TRWKIELpyqbboo0DDcGR41_zS9-tsog",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/user",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get user data",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWMzYzg1OTRiMGM1MDVkOTMxYTQxZjAiLCJyb2xlIjoidXNlciIsImlhdCI6MTcwNzMzMjM4OH0.voJf097KjsS7TRWKIELpyqbboo0DDcGR41_zS9-tsog",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/api/v1/user",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get profile data for another user",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWMzYzg1OTRiMGM1MDVkOTMxYTQxZjAiLCJyb2xlIjoidXNlciIsImlhdCI6MTcwNzMzMjM4OH0.voJf097KjsS7TRWKIELpyqbboo0DDcGR41_zS9-tsog",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/api/v1/user/65c3c3bbc3ce8c23a4ad0d9d",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"65c3c3bbc3ce8c23a4ad0d9d"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get users by recover email",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWM0YzQ2YjA3ZjRlY2Q1ZjE4MjcxOTciLCJyb2xlIjoidXNlciIsImlhdCI6MTcwNzM5NTQwNX0.iBeHqfk9-fpJjef7ylpsQYnLbThz7GfEWuAMoD61KxU",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"recoverEmail\":\"ahmedali@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/user/recoverEmail",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"recoverEmail"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "company",
+			"item": [
+				{
+					"name": "add",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWM2N2UyNGY2N2VjNjYyYWM2MDlkYzUiLCJyb2xlIjoidXNlciIsImlhdCI6MTcwNzUwNzIzNn0.DGQ-TWnDrW93hnsUHswD0Gsfjgohm9InxRN20UuTBPM",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"companyName\": \"kassab\",\r\n    \"description\": \"for programming\",\r\n    \"industry\": \"eduction\",\r\n    \"address\": \"dokki\",\r\n    \"numberOfEmployees\": 11,\r\n    \"companyEmail\": \"kassab@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/company",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"company"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get Company Data",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWM1MDE1MGU5OTg4NjY3ZmM3ZDMwMmMiLCJyb2xlIjoiY29tcGFueV9IUiIsImlhdCI6MTcwNzQ3ODQzOH0.ozxwi3mcch9AyZiQiNf1zuMg6fae8mZPeFG83BEeZ6c",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"companyName\": \"five\",\r\n    \"description\": \"for programming\",\r\n    \"industry\": \"eduction\",\r\n    \"address\": \"dokki\",\r\n    \"numberOfEmployees\": 11,\r\n    \"companyEmail\": \"five@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/company/65c67e5ef67ec662ac609dcb",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"company",
+								"65c67e5ef67ec662ac609dcb"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all applications for specific Jobs",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWM2N2UyNGY2N2VjNjYyYWM2MDlkYzUiLCJyb2xlIjoidXNlciIsImlhdCI6MTcwNzUwNzIzNn0.DGQ-TWnDrW93hnsUHswD0Gsfjgohm9InxRN20UuTBPM",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"companyName\": \"five\",\r\n    \"description\": \"for programming\",\r\n    \"industry\": \"eduction\",\r\n    \"address\": \"dokki\",\r\n    \"numberOfEmployees\": 11,\r\n    \"companyEmail\": \"five@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/company/applicationsForJob/65c67f32c7a46fe31f6212f3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"company",
+								"applicationsForJob",
+								"65c67f32c7a46fe31f6212f3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "search company name",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWM1MDE1MGU5OTg4NjY3ZmM3ZDMwMmMiLCJyb2xlIjoiY29tcGFueV9IUiIsImlhdCI6MTcwNzQwOTc0NH0.0VIh403wZKVu3z8cukFIxNalqNQF5UDnINl6QCw_5o0",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"companyName\": \"four\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/company/search",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"company",
+								"search"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWM1MDE1MGU5OTg4NjY3ZmM3ZDMwMmMiLCJyb2xlIjoiY29tcGFueV9IUiIsImlhdCI6MTcwNzQ3ODQzOH0.ozxwi3mcch9AyZiQiNf1zuMg6fae8mZPeFG83BEeZ6c",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"companyName\": \"fiv\",\r\n    \"description\": \"for programming\",\r\n    \"industry\": \"eduction\",\r\n    \"address\": \"dokki\",\r\n    \"numberOfEmployees\": 11,\r\n    \"companyEmail\": \"fiv@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/company",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"company"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWM1NmZjZjY0MTQ5MzY3NTlkYTcxYWEiLCJyb2xlIjoiY29tcGFueV9IUiIsImlhdCI6MTcwNzQzODAzMX0.pKdbYMd-vtr_ClVvwft6ZUS11vRbYx7VDkFkgP5Oqhc",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/company/65c518686329f775857db24a",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"company",
+								"65c518686329f775857db24a"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Job",
+			"item": [
+				{
+					"name": "add",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWM2N2UyNGY2N2VjNjYyYWM2MDlkYzUiLCJyb2xlIjoidXNlciIsImlhdCI6MTcwNzUwNzIzNn0.DGQ-TWnDrW93hnsUHswD0Gsfjgohm9InxRN20UuTBPM",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"jobTitle\": \"ui-ux\",\r\n    \"jobDescription\": \"can use apis\",\r\n    \"technicalSkills\": [\"nodejs\", \"typescript\"],\r\n    \"workingTime\": \"full-time\", \r\n    \"softSkills\": [\"management\", \"team worker\"]\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/Job",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"Job"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "apply cv",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWM2NmQxMDkwYTU2YmU3MjAxYTljNzYiLCJyb2xlIjoidXNlciIsImlhdCI6MTcwNzUwMjg2NH0.T7QfRqjLNnbw9xgwhgXw3gRBOwl6Cb0cMptYFdFUeCU",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "userTechSkills",
+									"value": "can use apis",
+									"type": "text"
+								},
+								{
+									"key": "userSoftSkills",
+									"value": "[\"nodejs\", \"typescript\"]",
+									"type": "text"
+								},
+								{
+									"key": "workingTime",
+									"value": "full-time",
+									"type": "text"
+								},
+								{
+									"key": "userResume",
+									"type": "file",
+									"src": "/C:/Users/dell/OneDrive/Desktop/ali kassab React Js developer.pdf"
+								},
+								{
+									"key": "jobId",
+									"value": "65c61f531bd5e8d5693d3e72",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "userResume",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/Job/applyJob",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"Job",
+								"applyJob"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all jobs",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWM1MDE1MGU5OTg4NjY3ZmM3ZDMwMmMiLCJyb2xlIjoiY29tcGFueV9IUiIsImlhdCI6MTcwNzQwOTc0NH0.0VIh403wZKVu3z8cukFIxNalqNQF5UDnINl6QCw_5o0",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"jobTitle\": \"tester2\",\r\n    \"jobDescription\": \"can use apis\",\r\n    \"technicalSkills\": [\"nodejs\", \"typescript\"],\r\n    \"workingTime\": \"full-time\", \r\n    \"softSkills\": [\"management\", \"team worker\"]\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/Job",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"Job"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all jobs with filter",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWM1MDE1MGU5OTg4NjY3ZmM3ZDMwMmMiLCJyb2xlIjoiY29tcGFueV9IUiIsImlhdCI6MTcwNzQwOTc0NH0.0VIh403wZKVu3z8cukFIxNalqNQF5UDnINl6QCw_5o0",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"jobTitle\": \"tester2\",\r\n    \"jobDescription\": \"can use apis\",\r\n    \"technicalSkills\": [\"nodejs\", \"typescript\"],\r\n    \"workingTime\": \"full-time\", \r\n    \"softSkills\": [\"management\", \"team worker\"]\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/job/filter?jobTitle=new&technicalSkills=nodejs",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"job",
+								"filter"
+							],
+							"query": [
+								{
+									"key": "jobTitle",
+									"value": "new"
+								},
+								{
+									"key": "technicalSkills",
+									"value": "nodejs"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get All Jobs For Company",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWM1MDE1MGU5OTg4NjY3ZmM3ZDMwMmMiLCJyb2xlIjoiY29tcGFueV9IUiIsImlhdCI6MTcwNzQwOTc0NH0.0VIh403wZKVu3z8cukFIxNalqNQF5UDnINl6QCw_5o0",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"jobTitle\": \"tester2\",\r\n    \"jobDescription\": \"can use apis\",\r\n    \"technicalSkills\": [\"nodejs\", \"typescript\"],\r\n    \"workingTime\": \"full-time\", \r\n    \"softSkills\": [\"management\", \"team worker\"]\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/Job/jobForCompany",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"Job",
+								"jobForCompany"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWM1MDE1MGU5OTg4NjY3ZmM3ZDMwMmMiLCJyb2xlIjoiY29tcGFueV9IUiIsImlhdCI6MTcwNzQwOTc0NH0.0VIh403wZKVu3z8cukFIxNalqNQF5UDnINl6QCw_5o0",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"jobTitle\": \"tester\",\r\n    \"jobDescription\": \"can use apis and dataBase\",\r\n    \"technicalSkills\": [\r\n        \"nodejs\"\r\n    ],\r\n    \"workingTime\": \"full-time\",\r\n    \"softSkills\": [\r\n        \"management\",\r\n        \"team worker\"\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/Job",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"Job"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWM1MDE1MGU5OTg4NjY3ZmM3ZDMwMmMiLCJyb2xlIjoiY29tcGFueV9IUiIsImlhdCI6MTcwNzQ3ODQzOH0.ozxwi3mcch9AyZiQiNf1zuMg6fae8mZPeFG83BEeZ6c",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/Job/65c61ef51bd5e8d5693d3e66",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"Job",
+								"65c61ef51bd5e8d5693d3e66"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "collectApplicationsAndCreateExcel",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWM2N2UyNGY2N2VjNjYyYWM2MDlkYzUiLCJyb2xlIjoidXNlciIsImlhdCI6MTcwNzUwNzIzNn0.DGQ-TWnDrW93hnsUHswD0Gsfjgohm9InxRN20UuTBPM",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"date\": \"2024-02-20\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/Job/collect_cvs",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"Job",
+								"collect_cvs"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
